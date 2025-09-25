@@ -10,9 +10,7 @@ export function activateDarkMode() {
 
 // Activate dark mode on page load if saved
 window.onload = () => {
-    const darkModeKey = 'darkMode';
-    const isDarkModeActive = localStorage.getItem(darkModeKey);
-    if (isDarkModeActive === 'true') {
+    if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
     }
 };
