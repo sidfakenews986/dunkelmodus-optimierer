@@ -1,8 +1,8 @@
 export function activateDarkMode() {
-    // Überprüfen, ob der Dunkelmodus bereits aktiviert ist
+    // Check if dark mode is already enabled
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-    // Dunkelmodus aktivieren/deaktivieren
+    // Toggle dark mode
     if (isDarkMode) {
         document.body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', 'false');
@@ -12,7 +12,7 @@ export function activateDarkMode() {
     }
 }
 
-// Standardmäßig den Dunkelmodus beim Laden der Seite aktivieren, falls gespeichert
+// Activate dark mode on page load if saved
 window.onload = () => {
     if(localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
