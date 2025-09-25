@@ -11,4 +11,5 @@ body:hover {
 body.dark-mode {
     background-color: black;
     color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
