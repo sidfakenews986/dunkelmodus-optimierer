@@ -1,15 +1,10 @@
 export function activateDarkMode() {
-    // Check if dark mode is already enabled
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    const darkModeKey = 'darkMode';
+    const isDarkMode = localStorage.getItem(darkModeKey) === 'true';
 
     // Toggle dark mode
-    if (isDarkMode) {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'false');
-    } else {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'true');
-    }
+    document.body.classList.toggle('dark-mode', !isDarkMode);
+    localStorage.setItem(darkModeKey, !isDarkMode);
 }
 
 // Activate dark mode on page load if saved
