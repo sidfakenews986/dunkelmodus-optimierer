@@ -3,14 +3,15 @@ export function activateDarkMode() {
     const isDarkModeActive = localStorage.getItem(darkModeKey) === 'true';
 
     // Toggle dark mode
-    document.body.classList.toggle('dark-mode', !isDarkModeActive);
-    localStorage.setItem(darkModeKey, !isDarkModeActive);
+    const newDarkModeStatus = !isDarkModeActive;
+    document.body.classList.toggle('dark-mode', newDarkModeStatus);
+    localStorage.setItem(darkModeKey, newDarkModeStatus);
 }
 
 // Activate dark mode on page load if saved
 window.onload = () => {
     const darkModeKey = 'darkMode';
-    if(localStorage.getItem(darkModeKey) === 'true') {
+    if (localStorage.getItem(darkModeKey) === 'true') {
         document.body.classList.add('dark-mode');
     }
 };
